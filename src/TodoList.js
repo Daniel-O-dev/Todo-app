@@ -15,6 +15,7 @@ class TodoList extends Component {
         this.update = this.update.bind(this);
         this.toggleCompletion = this.toggleCompletion.bind(this);
     }
+
     create(newTodo) {
         this.setState({
             todos: [...this.state.todos, newTodo]
@@ -34,6 +35,7 @@ class TodoList extends Component {
         });
         this.setState({ todos: updatedTodos });
     }
+
     toggleCompletion(id) {
         const updatedTodos = this.state.todos.map(todo => {
             if (todo.id === id) {
@@ -43,6 +45,8 @@ class TodoList extends Component {
         });
         this.setState({ todos: updatedTodos });
     }
+
+
     render() {
         const todos = this.state.todos.map(todo => {
             return (
@@ -62,7 +66,7 @@ class TodoList extends Component {
         return (
             <div className='TodoList'>
                 <h1>
-                    Get To Work! <span>An Animated Todo List Made With React Hooks.</span>
+                    Get To Work! <span>An Animated Todo List Made With React.</span>
                 </h1>
                 <NewTodoForm createTodo={this.create} />
 
